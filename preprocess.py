@@ -10,13 +10,17 @@ def write_course_data(data_json_path):
         data = json.load(f)
     
     with open('./CourseDetails.csv', 'w', encoding='utf-8', newline='') as f:
-        writer = csv.DictWriter(f, 
-            ['_updated', 'code', 'name', 'units', 'duration', 'current', 
+        headers = ['_updated', 'code', 'name', 'lname', 'units', 'duration', 'current', 
             'level', 'faculty', 'school', 'contact', 'incompatible', 'prerequisite',
-            'companion', 'restricted', 'assessment', 'coordinator', 'study_abroad', 'description'],
+            'companion', 'restricted', 'assessment', 'coordinator', 'study_abroad', 'description']
+        writer = csv.DictWriter(f, 
+            headers,
             extrasaction='ignore', )
         writer.writeheader()
-        writer.writerows(data)
+        writer.writerow({x:'TEST_'+x for x in headers})
+        for d in data:
+            d['lname'] = d['name'].lower()
+            writer.writerow(d)
 
 def write_course_offerings(data_json_path):
     with open(data_json_path) as f:
@@ -41,7 +45,7 @@ def write_course_offerings(data_json_path):
             'S': 4,
             'Q': 4
         }
-
+        writer.writerow(['TEST_code', 'http://example.com'] + ['test'+str(y) for y in years])
         for course in data:
             ecp = None
             yearly_offers = {int(y): None for y in years}
