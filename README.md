@@ -1,6 +1,6 @@
 # UQ Course Planner &ndash; Google Sheet Edition
 
-[Read-only link](https://docs.google.com/spreadsheets/d/1Zc9ebrxcvXNN7CNaAofFqfMKGRZ8d4yZQwIgpyNpf0E/edit?usp=sharing)
+[Google Sheets Link (read only)](https://docs.google.com/spreadsheets/d/1RGlhNi-CnAZ-T6RyTBew48BPsxdYPehAFG-qqN1UJVc/edit?usp=sharing). Make a copy to edit your own version.
 
 This is the support code and data.
 
